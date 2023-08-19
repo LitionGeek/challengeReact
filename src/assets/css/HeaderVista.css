@@ -1,0 +1,113 @@
+.MuiContainer-root.Headervista {
+  margin: 0;
+  padding: 0 16px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  max-width: 550px !important;
+  position: "relative";
+}
+
+#contenedor
+  > main
+  > div.MuiGrid-root.MuiGrid-container.css-11lq3yg-MuiGrid-root
+  > div
+  > div.MuiContainer-root.MuiContainer-maxWidthLg.Headervista.css-1oqqzyl-MuiContainer-root
+  > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.titleContainer {
+  width: 100%;
+}
+.encabezadoHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.volver {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Headervista .MuiGrid-root.MuiGrid-item.titulo {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Headervista .MuiGrid-root.MuiGrid-item.titulo div {
+  justify-content: center;
+}
+
+.Headervista .MuiGrid-root.MuiGrid-item.titulo {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+}
+
+.Headervista .MuiSvgIcon-root {
+  display: flex;
+  position: "absolute";
+  font-size: 2.3rem;
+  flex-direction: "row-reverse";
+  justify-content: "space-between";
+}
+
+.Headervista .MuiGrid-root.MuiGrid-item.start {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.Headervista .MuiGrid-root.MuiGrid-item.end {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 500px) {
+  .Headervista .MuiGrid-root.MuiGrid-item.titulo {
+    text-align: left;
+    margin-top: 0;
+    width: 550px !important;
+  }
+
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    font-weight: 700;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: "space-between";
+  }
+
+  .Headervista .MuiGrid-root.MuiGrid-item.titulo div {
+    justify-content: left;
+  }
+
+  .Headervista .MuiGrid-root.MuiGrid-item.titulo {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .Headervista .MuiGrid-root.MuiGrid-item.start {
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 24px;
+  }
+
+  .Headervista .MuiGrid-root.MuiGrid-item.end {
+    padding-right: 24px;
+  }
+}

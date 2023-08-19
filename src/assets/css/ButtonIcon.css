@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+}
+button.MuiButton-root.ButtonIcon {
+  min-width: 0;
+  padding: 6px 8px;
+}
+button.MuiButton-root.ButtonIcon.hasChildrenIconStart,
+button.MuiButton-root.ButtonIcon.hasChildrenIconEnd {
+  padding: 3px 8px;
+}
+button.MuiButton-root.ButtonIcon span.MuiButton-startIcon,
+button.MuiButton-root.ButtonIcon span.MuiButton-endIcon {
+  margin: 0;
+}
+button.MuiButton-root.ButtonIcon.hasChildrenIconStart span.MuiButton-startIcon {
+  margin-right: 4px;
+}
+button.MuiButton-root.ButtonIcon.hasChildrenIconEnd span.MuiButton-endIcon {
+  margin-left: 4px;
+}

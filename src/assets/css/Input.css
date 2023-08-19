@@ -1,0 +1,21 @@
+/* @import "../fonts/OpenSans.ttf" */
+
+.MuiFormLabel-root-MuiInputLabel-root,
+.MuiSelect-select.MuiOutlinedInput-input {
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.MuiFormHelperText-root.MuiFormHelperText-sizeMedium {
+  font-family: "Open Sans", sans-serif;
+}
+
+.MuiInputLabel-root.MuiInputLabel-outlined {
+  font-family: "Open Sans", sans-serif;
+}
+
+#menu-
+  > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiPaper-root.MuiMenu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  max-height: 500px;
+  min-height: 50px;
+}
