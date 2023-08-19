@@ -43,6 +43,8 @@ const options = {
 
 const CoinInfo = () => {
   const [action, setaction] = useState({ labels: [], datasets: [] });
+  //https://api.twelvedata.com/earnings?symbol=AAPL&start_date=2015-01-01&end_date=2016-01-01&interval=1&apikey=2f120b309ec743f9a492dc886a5674ea
+
   const getAction = async () => {
     const res = await fetchAction(
       "https://api.twelvedata.com/time_series?symbol=AAPL,EUR/USD,IXIC&interval=15min&apikey=demo"
@@ -66,7 +68,13 @@ const CoinInfo = () => {
   };
 
   useEffect(() => {
-    getAction();
+    const interval = sessionStorage.getItem("configChart") ?? 1;
+    let inutesInterval = interval * 6000;
+    console.log("interval", inutesInterval);
+    const intervalMiliseconds = setInterval(getAction, inutesInterval);
+    return () => {
+      clearInterval(intervalMiliseconds);
+    };
   }, []);
 
   return (

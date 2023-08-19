@@ -1,7 +1,9 @@
 import { HeaderVista } from "../../../components/index";
 
 const Header = () => {
-  return <HeaderVista start="TSLA - Tesla Inc - USD" end="Usuario: Juan" />;
+  const user = "Alan";
+  const action = "TSLA - Tesla Inc - USD";
+  return <HeaderVista start={action} end={`Usuario: ${user}`} />;
 };
 
 export default Header;

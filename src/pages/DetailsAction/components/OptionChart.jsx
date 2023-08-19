@@ -1,15 +1,23 @@
 import { Grid } from "@mui/material/index";
 import { Container } from "@mui/material/index";
 import { Select, ButtonIcon, InputRadio, DatePicker } from "../../../components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { intervals } from "../../../utils";
 
 const OptionChart = () => {
   const [config, setconfig] = useState({
-    interval: "",
+    interval: "1",
   });
+
   const handleChange = (key, value) => {
     setconfig((prev) => ({ ...prev, [key]: value }));
   };
+
+  useEffect(() => {
+    let miliseconds = 60000;
+    let invet = intervals[config.interval]?.minutes * miliseconds;
+    sessionStorage.setItem("configChart", JSON.stringify({ minutes: invet }));
+  }, [config]);
 
   return (
     <Container maxWidth="md">
@@ -31,20 +39,7 @@ const OptionChart = () => {
             defaultValue=""
             name={"interval"}
             value={config.interval}
-            options={[
-              { label: "1 minuto", value: 0 },
-              { label: "5 minuto", value: 1 },
-              { label: "15 minuto", value: 2 },
-              { label: "30 minuto", value: 3 },
-              { label: "45 minuto", value: 4 },
-              { label: "1 hora", value: 5 },
-              { label: "2 hora", value: 6 },
-              { label: "4 hora", value: 7 },
-              { label: "8 hora", value: 8 },
-              { label: "1 dia", value: 9 },
-              { label: "1 semana", value: 10 },
-              { label: "1 mes", value: 11 },
-            ]}
+            options={intervals}
           />
         </Grid>
         <Grid item xs={12} md={2} sx={{ display: "flex", alignItems: "center" }}>

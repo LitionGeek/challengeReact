@@ -9,7 +9,13 @@ export const authApiSlice = api.injectEndpoints({
         body: { ...credentials },
       }),
     }),
+    self: builder.mutation({
+      query: () => ({
+        url: "self/",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = authApiSlice;
+export const { useLoginMutation, useSelfMutation } = authApiSlice;
