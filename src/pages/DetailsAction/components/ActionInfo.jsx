@@ -69,8 +69,9 @@ const CoinInfo = () => {
 
   useEffect(() => {
     getAction();
-    const intervalConfig = sessionStorage.getItem("configChart") && JSON.parse(intervalConfig)?.miliseconds;
-    const intervalMilliseconds = setInterval(getAction, intervalConfig);
+    const intervalConfig = sessionStorage.getItem("configChart");
+    const interval = JSON.parse(intervalConfig)?.miliseconds;
+    const intervalMilliseconds = setInterval(getAction, interval);
 
     return () => {
       clearInterval(intervalMilliseconds);
