@@ -27,6 +27,18 @@ const options = {
       text: "TSLA",
     },
   },
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      grid: {
+        display: false,
+      },
+    },
+  },
 };
 
 const CoinInfo = () => {

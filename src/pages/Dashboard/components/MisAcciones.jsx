@@ -32,7 +32,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function MisAcciones() {
   const listActions = useSelector(getActions);
-
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -48,9 +47,9 @@ export default function MisAcciones() {
           {listActions?.map((row, index) => (
             <StyledTableRow key={index}>
               <StyledTableCell component="th" scope="row">
-                <a href={`/symbol?${row.symbol}`}>{row.symbol}</a>
+                <a href={`/details?symbol=${row.symbol}&currency=${row.currency}`}>{row.symbol}</a>
               </StyledTableCell>
-              <StyledTableCell align="right">{row.name}</StyledTableCell>
+              <StyledTableCell align="right">{row.label}</StyledTableCell>
               <StyledTableCell align="right">{row.currency}</StyledTableCell>
               <StyledTableCell align="right">
                 <ButtonIcon>Eliminar</ButtonIcon>

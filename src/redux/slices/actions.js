@@ -12,10 +12,13 @@ export const actionSlice = createSlice({
     setAction: (state, action) => {
       state.action = action.payload;
     },
+    setActions: (state, action) => {
+      state.actions = [...state.actions, action.payload];
+    },
   },
 });
 
-export const { setAction } = actionSlice.actions;
+export const { setAction, setActions } = actionSlice.actions;
 
 export const getAction = (state) => state.actions.action;
 export const getActions = (state) => state.actions.actions;

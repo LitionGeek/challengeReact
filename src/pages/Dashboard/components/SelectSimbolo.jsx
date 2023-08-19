@@ -3,15 +3,16 @@ import { Grid } from "@mui/material/index";
 import { ButtonIcon } from "../../../components";
 import ComboBox from "../../../components/ListItems";
 import { useCreateMutation } from "../../../redux/api/endpoints/createAction";
-import { useSelector } from "react-redux/es/exports";
-import { getAction } from "../../../redux/slices/actions";
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { getAction, setActions } from "../../../redux/slices/actions";
 
 const SelectSimbolo = () => {
   const [createAction, responseCreate] = useCreateMutation();
   const action = useSelector(getAction);
-
+  const dispatch = useDispatch();
   const handleSelect = () => {
-    console.log("Click", action);
+    console.log("action", action);
+    if (action) dispatch(setActions(action));
   };
 
   return (

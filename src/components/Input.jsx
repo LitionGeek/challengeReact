@@ -34,9 +34,6 @@ export default function Input(props) {
 
   return (
     <TextField
-      sx={{
-        marginTop: "15px",
-      }}
       label={props.label}
       value={props.value}
       onChange={(e) => validarRestricciones(e)}

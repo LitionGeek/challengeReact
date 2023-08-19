@@ -1,8 +1,6 @@
-import { FormControl, FormControlLabel, RadioGroup } from "@mui/material/index";
-import { Radio } from "@mui/material/index";
 import { Grid } from "@mui/material/index";
 import { Container } from "@mui/material/index";
-import { Select, ButtonIcon } from "../../../components";
+import { Select, ButtonIcon, InputRadio, DatePicker } from "../../../components";
 import { useState } from "react";
 
 const OptionChart = () => {
@@ -15,18 +13,15 @@ const OptionChart = () => {
 
   return (
     <Container maxWidth="md">
-      <Grid container>
-        <Grid item xs={12} md={12} sx={{ display: "flex" }}>
-          <FormControl>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="realTime"
-              name="radio-buttons-group"
-            >
-              <FormControlLabel value="realTime" control={<Radio />} label="Tiempo real" selected />
-              <FormControlLabel value="historic" control={<Radio />} label="Historico" />
-            </RadioGroup>
-          </FormControl>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={3} sx={{ display: "flex" }}>
+          <InputRadio />
+        </Grid>
+        <Grid item xs={12} md={4} sx={{ display: "flex" }}>
+          <DatePicker label="Fecha desde" />
+        </Grid>
+        <Grid item xs={12} md={4} sx={{ display: "flex" }}>
+          <DatePicker label="Fecha hasta" />
         </Grid>
         <Grid item xs={12} md={6}>
           <Select

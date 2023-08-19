@@ -9,12 +9,11 @@ import { setAction } from "../../src/redux/slices/actions";
 
 export default function ComboBox(props) {
   const [options, setOptions] = useState([]);
-  const previousController = useRef();
   const dispatch = useDispatch();
 
   const onInputChange = async (event, value, reason) => {
     if (value) {
-      const data = await getData(value, previousController);
+      const data = await getData(value);
       setOptions(data);
     } else {
       setOptions([]);
