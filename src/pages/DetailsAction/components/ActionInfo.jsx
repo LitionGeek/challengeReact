@@ -33,13 +33,20 @@ const CoinInfo = () => {
   const [action, setaction] = useState({ labels: [], datasets: [] });
   const getAction = async () => {
     const res = await fetchAction(
-      "https://api.twelvedata.com/time_series?symbol=AAPL,EUR/USD,IXIC&interval=1min&apikey=demo"
+      "https://api.twelvedata.com/time_series?symbol=AAPL,EUR/USD,IXIC&interval=15min&apikey=demo"
     );
+    let label = res.AAPL.values?.map((coin) => {
+      let date = new Date(coin.datetime);
+      let time = `${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")}`;
+      return time;
+    });
     setaction({
-      labels: res.AAPL.values?.map((sampling) => sampling.datetime),
+      labels: label.reverse(),
       datasets: [
         {
+          backgroundColor: "#459def",
           label: "TSLA",
+          borderColor: "#459def",
           data: res.AAPL.values?.map((sampling) => sampling.high),
         },
       ],
@@ -49,10 +56,6 @@ const CoinInfo = () => {
   useEffect(() => {
     getAction();
   }, []);
-
-  useEffect(() => {
-    console.log("action", action);
-  }, [action]);
 
   return (
     <Grid container>

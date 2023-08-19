@@ -17,7 +17,6 @@ export const getData = async (searchTerm) => {
     }
     const data = await response.json();
     if (data) {
-      console.log("tiene");
       return data?.data?.map((p, index) => {
         return { symbol: p.symbol, currency: p.currency, label: p.instrument_name, id: index, key: index };
       });

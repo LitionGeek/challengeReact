@@ -7,6 +7,5 @@ const PublicRoute = () => <Navigate replace to={PublicRoutes.Home} />;
 
 export const Authenticated = () => {
   const credentials = useSelector((state) => state.auth);
-  console.log("credentials", credentials);
   return credentials ? <PrivateRoute /> : <PublicRoute />;
 };
