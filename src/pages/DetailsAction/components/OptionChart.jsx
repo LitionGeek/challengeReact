@@ -6,7 +6,7 @@ import { intervals } from "../../../utils";
 
 const OptionChart = () => {
   const [config, setconfig] = useState({
-    interval: "1",
+    interval: "0",
   });
 
   const handleChange = (key, value) => {
@@ -14,9 +14,8 @@ const OptionChart = () => {
   };
 
   useEffect(() => {
-    let miliseconds = 60000;
-    let invet = intervals[config.interval]?.minutes * miliseconds;
-    sessionStorage.setItem("configChart", JSON.stringify({ minutes: invet }));
+    let invet = intervals[config.interval]?.minutes * 60000;
+    sessionStorage.setItem("configChart", JSON.stringify({ miliseconds: invet }));
   }, [config]);
 
   return (
